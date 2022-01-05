@@ -52,18 +52,32 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MvC-gf-wYh">
-                                        <rect key="frame" x="0.0" y="-88" width="414" height="204"/>
+                                        <rect key="frame" x="0.0" y="52" width="414" height="204"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bia-dx-eIb">
-                                                <rect key="frame" x="87" y="38" width="240" height="128"/>
+                                                <rect key="frame" x="87" y="62" width="240" height="128"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pjp-T1-2mz">
+                                                <rect key="frame" x="62" y="92" width="42" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pIo-wB-VfW">
+                                                <rect key="frame" x="62" y="145" width="42" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0nl-qJ-aQs">
-                                        <rect key="frame" x="87" y="296" width="240" height="128"/>
+                                        <rect key="frame" x="0.0" y="222" width="418" height="270"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>
@@ -89,8 +103,10 @@
                     <connections>
                         <outlet property="backButton" destination="WmH-lU-CDY" id="iX4-Lr-KxF"/>
                         <outlet property="dogImageView" destination="bia-dx-eIb" id="Ebd-3R-0SX"/>
+                        <outlet property="downLabel" destination="pIo-wB-VfW" id="c59-On-YUX"/>
                         <outlet property="redView" destination="0nl-qJ-aQs" id="sIO-We-uDg"/>
                         <outlet property="scrollView" destination="WlI-bj-u2R" id="jLU-Mv-7b9"/>
+                        <outlet property="topLabel" destination="Pjp-T1-2mz" id="Atj-VK-qpB"/>
                         <outlet property="topView" destination="MvC-gf-wYh" id="urf-1J-kcv"/>
                     </connections>
                 </viewController>

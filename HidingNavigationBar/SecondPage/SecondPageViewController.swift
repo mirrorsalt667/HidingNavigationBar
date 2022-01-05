@@ -9,6 +9,9 @@ import UIKit
 
 class SecondPageViewController: UIViewController {
 
+    @IBOutlet weak var topLabel: UILabel!
+    @IBOutlet weak var downLabel: UILabel!
+    
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var topView: UIView!
     @IBOutlet weak var dogImageView: UIImageView!
@@ -38,6 +41,7 @@ class SecondPageViewController: UIViewController {
         let naviHeight = navigationController!.navigationBar.frame.height - CGFloat(5)
         let naviTop = navigationController!.navigationBar.frame.minY + CGFloat(2)
         
+        
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
         scrollView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
@@ -49,6 +53,7 @@ class SecondPageViewController: UIViewController {
         scrollView.contentLayoutGuide.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
         scrollView.contentLayoutGuide.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
         scrollView.contentLayoutGuide.heightAnchor.constraint(equalToConstant: height + 300).isActive = true
+        
         
         topView.translatesAutoresizingMaskIntoConstraints = false
         topView.topAnchor.constraint(equalTo: scrollView.topAnchor).isActive = true
@@ -66,11 +71,22 @@ class SecondPageViewController: UIViewController {
         backButton.setTitle("", for: .normal)
         backButton.tintColor = UIColor.black
         
+        topLabel.translatesAutoresizingMaskIntoConstraints = false
+        topLabel.topAnchor.constraint(equalTo: backButton.bottomAnchor, constant: 15).isActive = true
+        topLabel.leadingAnchor.constraint(equalTo: backButton.leadingAnchor, constant: 15).isActive = true
+        labelStyle(label: topLabel, text: "果思設計")
+        topLabel.font = UIFont.boldSystemFont(ofSize: 20)
+
+        downLabel.translatesAutoresizingMaskIntoConstraints = false
+        downLabel.topAnchor.constraint(equalTo: topLabel.bottomAnchor, constant: 10).isActive = true
+        downLabel.leadingAnchor.constraint(equalTo: topLabel.leadingAnchor).isActive = true
+        labelStyle(label: downLabel, text: "iOS APP")
+        
         dogImageView.translatesAutoresizingMaskIntoConstraints = false
         dogImageView.topAnchor.constraint(equalTo: topView.topAnchor,constant: -naviTop).isActive = true
         dogImageView.leadingAnchor.constraint(equalTo: topView.leadingAnchor).isActive = true
         dogImageView.trailingAnchor.constraint(equalTo: topView.trailingAnchor).isActive = true
-        dogImageView.heightAnchor.constraint(equalToConstant: 300).isActive = true
+        dogImageView.heightAnchor.constraint(equalToConstant: 300+naviTop).isActive = true
         dogImageView.image = UIImage(named: "dog.jpeg")
         dogImageView.contentMode = .scaleAspectFill
         
@@ -79,14 +95,25 @@ class SecondPageViewController: UIViewController {
         redView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor).isActive = true
         redView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor).isActive = true
         redView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor).isActive = true
-        redView.backgroundColor = UIColor.red
-        redView.layer.cornerRadius = 45
-        redView.layer.maskedCorners = [.layerMaxXMinYCorner]
+        redViewStyle()
+//        redView.backgroundColor = UIColor.red
+//        redView.layer.cornerRadius = 45
+//        redView.layer.maskedCorners = [.layerMaxXMinYCorner]
     }
     
     func naviStyle() {
         self.navigationItem.title = "果思設計"
         navigationController?.navigationBar.alpha = 0
+    }
+    func labelStyle(label: UILabel, text: String) {
+        label.text = text
+        label.textColor = UIColor.white
+        label.font = UIFont.systemFont(ofSize: 20)
+    }
+    func redViewStyle() {
+        redView.backgroundColor = UIColor.red
+        redView.layer.cornerRadius = 45
+        redView.layer.maskedCorners = [.layerMaxXMinYCorner]
     }
 }
 
